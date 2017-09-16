@@ -21,6 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<start-class>com.rhcloud.tothought.BlogEmbeddedApplication</start-class>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -199,20 +200,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
     			<artifactId>spring-boot-maven-plugin</artifactId>
-    			<executions>
-        			<execution>
-            			<goals>
-                <goal>repackage</goal>
-            </goals>
-            <configuration>
-                <classifier>spring-boot</classifier>
-                <mainClass>
-                	com.rhcloud.tothought.BlogEmbeddedApplication 
-                </mainClass>
-            </configuration>
-        </execution>
-    </executions>
-</plugin>
+			</plugin>
 		</plugins>
 	</build>
 

@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.SecurityFilterAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
@@ -16,7 +15,7 @@ import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 
 @SpringBootApplication
 @ImportResource({ "classpath:/META-INF/application-context.xml", "classpath:/META-INF/servlet-context.xml" })
-@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, WebMvcAutoConfiguration.class,
+@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, 
 		SecurityFilterAutoConfiguration.class,SecurityAutoConfiguration.class })
 @Configuration
 public class BlogEmbeddedApplication {

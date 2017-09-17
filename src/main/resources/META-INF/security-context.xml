@@ -7,20 +7,33 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
-
-	<http auto-config="true">
-		<intercept-url pattern="/resources/**" access="permitAll"/>
-		<intercept-url pattern="/login.jsp*" access="permitAll"/>
-
-		<intercept-url pattern="/**/secure/**" access="ROLE_ADMIN" />
-
-	    <form-login login-page="/login.jsp" login-processing-url="/login" default-target-url="/blog/"/>
-	</http>
 	
-	<authentication-manager>
-		<authentication-provider>
-			<user-service id="userDetailsService" properties="classpath:META-INF/security/user.properties"/>
-		</authentication-provider>
-	</authentication-manager>
+	<beans:beans>
+		<http auto-config="true">
+			<intercept-url pattern="/resources/**" access="permitAll"/>
+			<intercept-url pattern="/login.jsp*" access="permitAll"/>
+			<intercept-url pattern="/**/secure/**" access="ROLE_ADMIN" />
+			<form-login login-page="/login.jsp" login-processing-url="/login" default-target-url="/blog/"/>
+		</http>
+	</beans:beans>
+
+	<beans:beans profile="local">
+			<authentication-manager>
+				<authentication-provider>
+					<user-service id="userDetailsService" properties="classpath:META-INF/security/user.properties"/>
+				</authentication-provider>
+			</authentication-manager>
+	</beans:beans>
+
+	<beans:beans profile="openshift">
+			<authentication-manager>
+				<authentication-provider>
+					<user-service id="userDetailsService">
+						<user name="${user1_username}" password="${user1_password}" authorities="${user1_roles}"/>	
+					</user-service>
+				</authentication-provider>
+			</authentication-manager>
+	</beans:beans>
+
 
 </beans:beans>

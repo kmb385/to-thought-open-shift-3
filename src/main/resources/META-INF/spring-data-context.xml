@@ -28,7 +28,7 @@
 		<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
 			destroy-method="close">
 			<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-			<property name="url" value="jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/${MYSQL_DATABASE}" />
+			<property name="url" value="jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/sampledb" />
 			<property name="username" value="${MYSQL_USER}" />
 			<property name="password" value="${MYSQL_PASSWORD}" />
 		</bean>

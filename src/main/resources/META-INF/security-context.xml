@@ -29,7 +29,7 @@
 			<authentication-manager>
 				<authentication-provider>
 					<user-service id="userDetailsService">
-						<user name="#{user1_username}" disabled="false" password="#{systemEnvironment['user1_password']}" authorities="#{systemEnvironment['user1_roles']}"/>	
+						<user name="${user1_username}" disabled="false" password="#{systemEnvironment['user1_password']}" authorities="#{systemEnvironment['user1_roles']}"/>	
 					</user-service>
 				</authentication-provider>
 			</authentication-manager>

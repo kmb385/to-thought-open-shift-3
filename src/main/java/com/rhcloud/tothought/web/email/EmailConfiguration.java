@@ -10,19 +10,19 @@ public class EmailConfiguration {
 	
 	public static final String DEV_ENVIRONMENT = "DEV";
 
-	@Value("${tothought.env}")
+	@Value("${tothought_env}")
 	private String environment;
 	
-	@Value("${email.username}")
+	@Value("${email_username}")
 	private String username;
 	
-	@Value("${email.password}")
+	@Value("${email_password}")
 	private String password;
 	
-	@Value("${email.host}")
+	@Value("${email_host}")
 	private String host;
 	
-	@Value("${email.port}")
+	@Value("${email_port}")
 	private String port;
 
 	public String getUsername() {

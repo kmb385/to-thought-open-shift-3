@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @EnableWebMvc
-@ImportResource({ "classpath:/META-INF/application-context.xml", "classpath:/META-INF/servlet-context.xml" })
+@ImportResource({ "classpath:/META-INF/application-context.xml"})
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, SecurityFilterAutoConfiguration.class,
 		SecurityAutoConfiguration.class })
 @ComponentScan("com.rhcloud.tothought.web.spring.controllers")

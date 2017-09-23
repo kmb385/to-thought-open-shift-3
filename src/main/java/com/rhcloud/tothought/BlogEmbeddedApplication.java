@@ -15,8 +15,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
+@EnableWebMvc
 @ImportResource({ "classpath:/META-INF/application-context.xml", "classpath:/META-INF/servlet-context.xml" })
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, SecurityFilterAutoConfiguration.class,
 		SecurityAutoConfiguration.class })

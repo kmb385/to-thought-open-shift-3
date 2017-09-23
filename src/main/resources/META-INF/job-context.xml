@@ -12,13 +12,5 @@
 	<beans profile="local">
 		<context:property-placeholder location="classpath:META-INF/jobs/jobs.properties" order="1" ignore-unresolvable="true"/>
 	</beans>
-	
-	<beans>	
-		<tx:annotation-driven/>
-		<task:annotation-driven scheduler="myScheduler"/>
-	 
-		<task:scheduler id="myScheduler" pool-size="10"/>
-		<bean id="gitHubJob" class="com.rhcloud.tothought.web.spring.jobs.GitHubJob"/>
-		<bean id="stackOverflowJob" class="com.rhcloud.tothought.web.spring.jobs.StackOverflowJob"/>	
-	</beans>
+
 </beans>

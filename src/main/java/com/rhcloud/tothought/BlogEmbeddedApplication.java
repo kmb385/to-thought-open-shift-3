@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.security.SecurityFilterAutoConfigu
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
@@ -19,6 +20,7 @@ import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 @ImportResource({ "classpath:/META-INF/application-context.xml", "classpath:/META-INF/servlet-context.xml" })
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, SecurityFilterAutoConfiguration.class,
 		SecurityAutoConfiguration.class })
+@ComponentScan("com.rhcloud.tothought.web.spring.controllers")
 @Configuration
 public class BlogEmbeddedApplication extends SpringBootServletInitializer {
 

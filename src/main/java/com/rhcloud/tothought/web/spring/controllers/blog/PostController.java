@@ -23,13 +23,13 @@ public class PostController {
 
 	@Autowired
 	PostViewRepository postViewRepository;
-
+/*
 	@Autowired
 	RecaptchaService recaptchaService;
-	
+*/	
 	@RequestMapping("/{postId}")
 	public String getPost(@PathVariable Integer postId, Model model) {
-		model.addAttribute("captcha", recaptchaService.getRecaptcha());
+//		model.addAttribute("captcha", recaptchaService.getRecaptcha());
 		model.addAttribute("isSingle", true);
 		model.addAttribute("post", postViewRepository.findOne(postId));
 		model.addAttribute("tags", tagViewRepository.findAll(new Sort(Direction.ASC, "name")));

@@ -22,7 +22,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ImportResource({ "classpath:/META-INF/application-context.xml"})
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, SecurityFilterAutoConfiguration.class,
 		SecurityAutoConfiguration.class })
-@ComponentScan("com.rhcloud.tothought.web.spring.controllers")
+@ComponentScan("com.rhcloud.tothought")
 @Configuration
 public class BlogEmbeddedApplication extends SpringBootServletInitializer {
 

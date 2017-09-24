@@ -40,23 +40,24 @@ public class CommentController {
 
 	@Autowired
 	EmailService emailService;
-	
+/*	
 	@Autowired
 	RecaptchaService recaptchaService;
-
+*/
 	@RequestMapping(value = "/save")
 	public String save(@Valid @ModelAttribute Comment comment, BindingResult result, Model model,
 			HttpServletRequest request) {
 
 		final Integer postId = comment.getPost().getPostId();
-		
-		if (result.hasErrors() || !recaptchaService.isValid(request) || !request.getParameter("mandatory").isEmpty() || this.isValid(comment.getBody())) {
+	
+		if( result.hasErrors() || !request.getParameter("mandatory").isEmpty() || this.isValid(comment.getBody())) {
+//		if (result.hasErrors() || !recaptchaService.isValid(request) || !request.getParameter("mandatory").isEmpty() || this.isValid(comment.getBody())) {
 			
 			model.addAttribute("post", postViewRepository.findOne(postId));
 			model.addAttribute("isSingle", true);
 			model.addAttribute("tags", tagViewRepository.findAll(new Sort(Direction.ASC, "name")));
-			model.addAttribute("captcha", recaptchaService.getRecaptcha());
-			model.addAttribute("captchaError", recaptchaService.getErrorMsg());
+//			model.addAttribute("captcha", recaptchaService.getRecaptcha());
+//			model.addAttribute("captchaError", recaptchaService.getErrorMsg());
 			return "blog/post";
 
 		} else {
